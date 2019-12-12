@@ -15,6 +15,7 @@ import pendingRequest from "@/views/PendingRequests.vue";
 import approvedRequest from "@/views/ApprovedRequests.vue";
 import rejectedRequest from "@/views/RejectedRequests.vue";
 import Editpassword from '../modules/Kiray/Editpassword.vue'
+import EditInformation from '../modules/Kiray/EditInformation.vue'
 
 import Signup from '../modules/Kiray/Signup.vue'
 Vue.use(VueRouter);
@@ -45,7 +46,7 @@ const routes = [
         }
     },
     {
-        path: "/student/:batchnum",
+        path: "/student/:username",
         component: Student,
         props: true,
         beforeEnter(to, from, next) {
@@ -92,6 +93,21 @@ const routes = [
     {
         path: "/requests",
         component: Requests,
+        beforeEnter(to, from, next) {
+            if (store.getters.isLoggedIn) {
+                next();
+            } else {
+                next("/");
+            }
+        },
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: "/editinfo/:passid",
+        component: EditInformation,
+        props:true,
         beforeEnter(to, from, next) {
             if (store.getters.isLoggedIn) {
                 next();

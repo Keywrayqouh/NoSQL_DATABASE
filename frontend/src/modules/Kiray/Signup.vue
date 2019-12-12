@@ -6,10 +6,10 @@
       <div id="login-card">
         <v-card class="transparent" elevation="10" width="500" height="750">
           <div class="pad-top">
-            <img src="@/assets/pnlogo.png" id="logo" />
+0<img src="@/assets/pnlogo.png" id="logo" />
             <p>Passerelles Numeriques</p>
           </div>
-          <form>
+          
             <div class="custom">
               <v-text-field
                 append-icon="mdi-account"
@@ -85,7 +85,7 @@
                 <h1 class="font">SIGNUP</h1>
               </v-btn>
             </div>
-          </form>
+
         </v-card>
       </div>
     </center>
